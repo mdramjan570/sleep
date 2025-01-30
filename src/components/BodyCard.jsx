@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./ui/card";
+import Card from "./ui/Card.jsx";
 
 const BodyCard = () => {
   const list = new Array(20).fill(null);

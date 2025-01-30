@@ -1,6 +1,6 @@
 import React from "react";
 import AddReview from "./AddReview";
-import Star from "./Star";
+import Star from "./Star.jsx";
 const reviewLists = [
   {
     name: "Ryan Harnick",
