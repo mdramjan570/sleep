@@ -5,6 +5,7 @@ import CommonHeader from "../components/CommonHeader";
 import TextArea from "../components/TextArea";
 import image from "../assets/images/carisoprodol.png";
 import Cuppon from "../components/Cuppon";
+import buy from "../assets/images/buy.png";
 import {
   Table,
   TableBody,
@@ -25,6 +26,14 @@ const reviewLists = [
     comment:
       " Brilliant company I was not sure to start with but I paid and got what I needed and would recommend to my friends and family. If I had the money I would be purchasing today but when I do get paid I will use this company again.",
   },
+];
+const medicinesList = [
+  { tablet: 8, totalPrice: 20, perTablet: 87, icon: buy },
+  { tablet: 10, totalPrice: 20, perTablet: 28, icon: buy },
+  { tablet: 8, totalPrice: 12, perTablet: 30, icon: buy },
+  { tablet: 16, totalPrice: 20, perTablet: 85, icon: buy },
+  { tablet: 10, totalPrice: 20, perTablet: 25, icon: buy },
+  { tablet: 16, totalPrice: 20, perTablet: 85, icon: buy },
 ];
 const SinglePage = () => {
   return (
@@ -56,7 +65,8 @@ const SinglePage = () => {
           <div className="w-full md:w-1/2 ">
             <div className="flex flex-col w-full py-2">
               <Tabs
-                variant="solid"
+                variant="bordered"
+                classNames={{ wrapper: "bg-red-500" }}
                 color="primary"
                 fullWidth
                 size="lg"
@@ -73,7 +83,15 @@ const SinglePage = () => {
                 <Tab key="videos" title="10 mg"></Tab>
               </Tabs>
             </div>
-            <Table radius="none" aria-label="Example static collection table">
+            <Table
+              isStriped
+              isHeaderSticky
+              classNames={{
+                th: "bg-[#184971] text-white  text-sm font-medium",
+              }}
+              radius="none"
+              aria-label="Example static collection table"
+            >
               <TableHeader>
                 <TableColumn>Tablets</TableColumn>
                 <TableColumn>Total Price</TableColumn>
@@ -81,49 +99,18 @@ const SinglePage = () => {
                 <TableColumn>Add to Cart</TableColumn>
               </TableHeader>
               <TableBody>
-                <TableRow key="1">
-                  <TableCell>28</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>butom</TableCell>
-                </TableRow>
-                <TableRow key="1">
-                  <TableCell>28</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>butom</TableCell>
-                </TableRow>
-                <TableRow key="1">
-                  <TableCell>28</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>butom</TableCell>
-                </TableRow>
-                <TableRow key="1">
-                  <TableCell>28</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>10</TableCell>
-                  <TableCell>butom</TableCell>
-                </TableRow>
-                <TableRow key="2">
-                  <TableCell>56</TableCell>
-                  <TableCell>15</TableCell>
-                  <TableCell>15</TableCell>
-
-                  <TableCell>Paused</TableCell>
-                </TableRow>
-                <TableRow key="3">
-                  <TableCell>85</TableCell>
-                  <TableCell>85</TableCell>
-                  <TableCell>85</TableCell>
-                  <TableCell>Active</TableCell>
-                </TableRow>
-                <TableRow key="4">
-                  <TableCell>65</TableCell>
-                  <TableCell>15</TableCell>
-                  <TableCell>15</TableCell>
-                  <TableCell>Vacation</TableCell>
-                </TableRow>
+                {medicinesList.map((tablet) => {
+                  return (
+                    <TableRow key="1">
+                      <TableCell>{tablet.tablet}</TableCell>
+                      <TableCell>{tablet.totalPrice}</TableCell>
+                      <TableCell>{tablet.perTablet}</TableCell>
+                      <TableCell>
+                        <img className="h-6 " src={tablet.icon} alt="logo" />
+                      </TableCell>
+                    </TableRow>
+                  );
+                })}
               </TableBody>
             </Table>
           </div>
