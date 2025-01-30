@@ -2,7 +2,7 @@ import { Button, Form, Input, Textarea } from "@nextui-org/react";
 import React, { useState } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import CustomerReview from "./CustomerReview";
-const AddReview = () => {
+const AddReview = ({ Class }) => {
   const [submitted, setSubmitted] = React.useState(null);
   const [recaptchaStatus, setRecaptchaStatus] = useState(false);
   const [recaptchaKey, setRecaptchaKey] = useState("");
@@ -22,7 +22,7 @@ const AddReview = () => {
   };
 
   return (
-    <div className="py-5 ">
+    <div className={`py-5 ${Class}`}>
       <div>
         <h2 className=" text-2xl text-[#112f46] font-bold ">Add a review</h2>
         <p className="font-bold ">

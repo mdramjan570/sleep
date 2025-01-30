@@ -1,6 +1,7 @@
 import React from "react";
 import AddReview from "./AddReview";
-import Star from "./Star.jsx";
+
+import CommentList from "./CommentList.jsx";
 const reviewLists = [
   {
     name: "Ryan Harnick",
@@ -54,28 +55,7 @@ const Reviews = () => {
         </h2>
         <div className="flex flex-col gap-8">
           {reviewLists.map((comment, index) => {
-            return (
-              <div className="flex items-start gap-4" key={index}>
-                <div className="flex items-center justify-center min-w-16 min-h-16 bg-[#ddd] rounded-full text-3xl">
-                  {comment.name.split(" ")[0].split("")[0]}
-                </div>
-
-                <div className="flex flex-col gap-2 ring-1 ring-[#eee] p-4  rounded-md">
-                  <div className="flex items-center gap-1 ">
-                    <Star starColor=" text-yellow-300" />
-
-                    <div>
-                      <span>
-                        <b>{comment.name}</b> -{comment.birth}
-                      </span>
-                    </div>
-                  </div>
-                  <div>
-                    <p className="text-[#292828]">{comment.comment}</p>
-                  </div>
-                </div>
-              </div>
-            );
+            return <CommentList comment={comment} key={index} />;
           })}
         </div>
         <AddReview />

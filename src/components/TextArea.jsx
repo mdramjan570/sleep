@@ -1,10 +1,10 @@
 import React from "react";
 import { BsDot } from "react-icons/bs";
-const TextArea = () => {
+const TextArea = ({ Class }) => {
   return (
-    <div className="flex flex-col gap-4">
+    <div className={`flex flex-col gap-4 ${Class}`}>
       <div>
-        <h3 className="text-xl text-[#002039]"> What is Insomnia?</h3>
+        <h3 className="text-xl text-[#002039] font-bold">What is Insomnia?</h3>
         <p className="text-justify ">
           Insomnia can be defined as the inability to fall asleep at night. Most
           cases of insomnia can be transient and usually pass without the need
@@ -17,7 +17,7 @@ const TextArea = () => {
         </p>
       </div>
       <div>
-        <h3 className="text-xl text-[#002039]"> Types of Insomnia</h3>
+        <h3 className="text-xl text-[#002039] font-bold"> Types of Insomnia</h3>
         <p className="text-justify">
           There are a number of sleeping problems that may be defined as
           insomnia. These include problems falling asleep at night, waking up
@@ -28,7 +28,7 @@ const TextArea = () => {
         </p>
       </div>
       <div>
-        <h3 className="text-xl text-[#002039]"> Causes of Insomnia</h3>
+        <h3 className="text-xl text-[#002039] font-bold">Causes of Insomnia</h3>
         <p className="text-justify">
           There are a number of factors that may cause insomnia. Often, medical
           conditions can trigger periods of sleeplessness. These may include
@@ -46,7 +46,7 @@ const TextArea = () => {
         </p>
       </div>
       <div>
-        <h3 className="text-xl text-[#002039]">
+        <h3 className="text-xl text-[#002039] font-bold">
           How to Deal with Insomnia without Sleeping Tablets
         </h3>
         <p className="text-justify">
@@ -117,7 +117,7 @@ const TextArea = () => {
         </div>
       </div>
       <div>
-        <h3 className="text-xl text-[#002039]">
+        <h3 className="text-xl text-[#002039] font-bold">
           Different Types of Strong Sleeping Pills Medication
         </h3>
         <p className="text-justify">
@@ -132,7 +132,7 @@ const TextArea = () => {
         </p>
       </div>
       <div>
-        <h3 className="text-xl text-[#002039]">
+        <h3 className="text-xl text-[#002039] font-bold">
           Can Sleeping Pills be Ordered Online to Treat Insomnia?{" "}
         </h3>
         <p className="text-justify">
