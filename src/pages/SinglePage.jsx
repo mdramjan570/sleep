@@ -53,7 +53,12 @@ const SinglePage = () => {
               radius="sm"
               aria-label="Options"
             >
-              <Tab key="photos" title="SELECT STRENGTH"></Tab>
+              <Tab
+                aria-label="Disabled Options"
+                disabledKeys={["music"]}
+                key="music"
+                title="SELECT STRENGTH"
+              ></Tab>
               <Tab key="music" title="7.5 mg"></Tab>
               <Tab key="videos" title="10 mg"></Tab>
             </Tabs>
