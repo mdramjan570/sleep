@@ -19,6 +19,7 @@ import {
 import AddReview from "../components/AddReview.jsx";
 import CommentList from "../components/CommentList.jsx";
 import Breadcrumbs from "../components/Breadcrumbs.jsx";
+import ReletateProducts from "../components/ReletateProducts.jsx";
 const reviewLists = [
   {
     name: "Ryan Harnick",
@@ -74,6 +75,7 @@ const SinglePage = () => {
                 aria-label="Options"
               >
                 <Tab
+                  r
                   aria-label="Disabled Options"
                   disabledKeys={["music"]}
                   key="music"
@@ -129,6 +131,8 @@ const SinglePage = () => {
           <AddReview Class="" />
         </div>
       </div>
+
+      <ReletateProducts />
     </CommonWrapper>
   );
 };
